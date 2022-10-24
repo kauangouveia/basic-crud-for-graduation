@@ -15,6 +15,11 @@ export const ContentForm = styled.div`
         margin-top: 10px;
         cursor: pointer;
     }
+    h3{
+        margin-top: 1rem;
+        cursor: pointer;
+        color: white;
+    }
     `
 export const Form = styled.form`
     display: flex;

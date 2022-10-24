@@ -15,7 +15,13 @@ export const ContentForm = styled.div`
         margin-top: 10px;
         cursor: pointer;
     }
+    h3{
+        margin-top: 1rem;
+        cursor: pointer;
+        color: white;
+    }
     `
+
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
@@ -65,15 +71,4 @@ export const Box = styled.div`
         width: 50%;
     }
 
-    h2{
-        margin-bottom: 5px;
-        color: white;
-        text-decoration: underline;
-    }
-    h3{
-        margin-bottom: 5px;
-        color:#7C7C8A;
-    }
-
-    
 `
