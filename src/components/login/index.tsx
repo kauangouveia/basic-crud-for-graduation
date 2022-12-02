@@ -1,13 +1,17 @@
 import { useForm } from "react-hook-form";
 import { Box, Button, ContentForm, Form, Input, Label } from "./style";
-import chat from "../../assets/chat.svg"
+import visitor from "../../assets/visitor.svg"
 import { StepContext } from '../../context/contextSteps'
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { ListContext } from "../../context/contextList";
+import { api } from "../../service";
+// import { getVisitorService } from "../../service/visitor";
 
 export const Login = () => {
 
     const { setStep, step } = useContext(StepContext)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
 
     const onSubmit = (data: any) => {
         console.log(step)
@@ -16,13 +20,16 @@ export const Login = () => {
     }
 
 
+
+   
+
     return (
         <>
             <ContentForm onSubmit={handleSubmit(onSubmit)}>
                 <Box>
-                    <img src={chat} alt='chat' />
-                    <h2>Chat Real</h2>
-                    <h3>Faça login e comece utilizar</h3>
+                    <img src={visitor} alt='chat' />
+                    <h2>Controle de visitantes</h2>
+                    <h3>Faça login e cadastre um visitante</h3>
                 </Box>
                 <Form>
                     <Label>Endereço de e-mail</Label>

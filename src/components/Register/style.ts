@@ -82,3 +82,15 @@ export const Box = styled.div`
 
     
 `
+
+export const Select = styled.select`
+    background: white;
+    margin-top: 1rem;
+    border-radius: 8px;
+    height: 3rem;
+    color: black;
+    font-size: .8rem;
+    padding-left: 0.7rem;
+`
+
+

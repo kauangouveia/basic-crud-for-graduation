@@ -2,13 +2,15 @@ import styled from 'styled-components';
 
 
 export const ContentForm = styled.div`
-    width: 500px;
-    height: 250px;
+    width: 600px;
+    height: auto;
+    padding:  3rem;
+    border-radius: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    background-color: #23232a;
     .withOutRegister{
         width: auto;
         color: white;
@@ -21,7 +23,6 @@ export const ContentForm = styled.div`
         color: white;
     }
     `
-
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
@@ -71,4 +72,36 @@ export const Box = styled.div`
         width: 50%;
     }
 
+    h2{
+        margin-bottom: 5px;
+        color: white;
+        text-decoration: underline;
+    }
+    h3{
+        margin-bottom: 5px;
+        color:#7C7C8A;
+    }
+
+    
 `
+export const ContainerModal = styled.div`
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #37373769;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+`
+export const Select = styled.select`
+    background: white;
+    margin-top: 1rem;
+    border-radius: 8px;
+    height: 3rem;
+    color: black;
+    font-size: .8rem;
+    padding-left: 0.7rem;
+`
+
+

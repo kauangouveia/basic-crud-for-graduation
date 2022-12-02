@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
-import { Box, Button, ContentForm, Form, Input, Label } from "./style";
+import { Box, Button, ContentForm, Form, Input, Label, Select } from "./style";
 import chat from "../../assets/register.svg"
 import { StepContext } from '../../context/contextSteps'
 import { useContext } from "react";
+import { api } from "../../service";
+import { createVisitor } from "../../service/visitor";
 
 export const Register = () => {
 
@@ -10,9 +12,8 @@ export const Register = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const onSubmit = (data: any) => {
-        console.log(step)
-        console.log(data)
-        setStep(2)
+        createVisitor(data)
+        setStep(1)
     }
 
 
@@ -21,17 +22,26 @@ export const Register = () => {
             <ContentForm onSubmit={handleSubmit(onSubmit)}>
                 <Box>
                     <img src={chat} alt='chat' />
+                    <h2>Registre um visitante</h2>
                 </Box>
                 <Form>
-                    <Label>Seu Nome</Label>
-                    <Input type="name" placeholder="Digite seu e-mail" {...register('name')} />
-                    <Label>Seu Email</Label>
-                    <Input type="email" placeholder="Digite sua senha" {...register('email')} />
-                    <Label>Sua Senha</Label>
-                    <Input type="email" placeholder="Digite sua senha" {...register('password')} />
-                    <Button>Cadastrar-se</Button>
+                    <Label>Nome</Label>
+                    <Input type="name" placeholder="Digite  e-mail" {...register('nome')} required />
+                    <Label>CPF</Label>
+                    <Input type="text" placeholder="Digite  CPF" {...register('cpf')} required />
+                    <Label>Idade</Label>
+                    <Input type="text" placeholder="Digite  idade" {...register('idade')} required />
+                    <Label>Telefone</Label>
+                    <Input type="text" placeholder="Digite  telefone" {...register('telefone')} required />
+                    <Label>Permanente</Label>
+
+                        <Select {...register("permanente")}>
+                            <option value="true">SIM</option>
+                            <option value="false">NÃO</option>
+                        </Select>
+                    <Button>Cadastrar</Button>
                 </Form>
-                <h3 onClick={() => setStep(0)}>Voltar</h3>
+                <h3 onClick={() => setStep(1)}>Voltar</h3>
             </ContentForm>
         </>
     )
